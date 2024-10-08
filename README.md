@@ -1,5 +1,72 @@
-# hackathon
+# Biodiversity Hackathon: OBIS Resources
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iobis/hackathon/HEAD)
 
-Repository for hackathon resources
+This repository contains materials and instructions for participants of the Biodiversity Hackathon.
+Here we outline the various tools, demos, and resources that can be used to access and use the biological and biogeographical data in OBIS.
 
+- [Data access](#access-obis-data)
+
+
+## Access OBIS data
+
+There are several options available to download data from OBIS, some of which include:
+
+- R package [robis](https://github.com/iobis/robis)
+- Python package [pyobis](https://github.com/iobis/pyobis)
+- Full data exports
+- [OBIS homepage search](https://obis.org/) or [advanced dataset search](https://obis.org/datasets)
+- [OBIS Mapper](https://mapper.obis.org/)
+
+
+### robis
+
+The [robis R package](https://github.com/iobis/robis) connects to the OBIS API from R. The package can be installed from CRAN or from GitHub (latest development version). 
+```
+# install from CRAN
+install.packages("robis")
+
+# latest development version
+remotes::install_github("iobis/robis")
+```
+You can use the package to obtain a list of datasets, a taxon checklist, or raw occurrence data by supplying e.g. a taxon name or [WoRMS AphiaID](https://www.marinespecies.org/about.php). You can also specify whether to include absence records when obtaining occurrence data.
+To download this data, simply export R objects with the write.csv function. If we wanted to obtain Mollusc data from OBIS, some options would be:
+
+```
+library(robis)
+#obtain occurrence data
+moll<-occurrence("Mollusca")
+moll_abs<-occurrence(“Mollusca”, absence="include") #include absence records
+write.csv(moll, “mollusca-obis.csv”)` #save the data to csv
+
+#obtain a list of datasets for a taxon
+molldata<-dataset(scientificname="Mollusca")
+
+#obtain a checklist of Mollusc species in a certain area
+mollcheck<-checklist(scientificname="Mollusca", geometry = "POLYGON ((2.3 51.8, 2.3 51.6, 2.6 51.6, 2.6 51.8, 2.3 51.8))")
+```
+
+#### Filter datasets by keyword
+
+You can use robis to obtain all datasets and then filter based on keywords in the title and/or abstract. See example below where we filter to find datasets related to seamounts. Multiple keywords can be provided by using | to separate each word, e.g. "seamount|deepsea|benthos".
+
+```
+search_terms <- "seamount" #define your search terms
+
+datasets <- robis::dataset() #obtain datasets from OBIS
+
+seamount_datasets <- datasets[grepl(paste(search_terms, collapse = "|"), datasets$title, ignore.case = TRUE) |
+                                grepl(paste(search_terms, collapse = "|"), datasets$abstract, ignore.case = TRUE),]
+```
+
+## Full data exports
+
+[links to jupyter notebook for full data export?]
+
+## OBIS homepage
+
+From the OBIS homepage, you can search for data in the search bar in the middle of the page. You can search by particular taxonomic groups, common names, dataset names, OBIS nodes, institute name, areas (e.g., Exclusive Economic Zone (EEZ)), or by the data provider’s country.
+See [here](https://manual.obis.org/access.html#obis-homepage-and-dataset-pages) for more details.
+
+## OBIS Mapper
+
+The [OBIS Mapper](https://mapper.obis.org) lets you visualize and filter OBIS data by taxonomy, location, time, and data quality, with options to combine layers and download them as CSV. For more details, see the [OBIS manual](https://manual.obis.org/access.html#mapper).
