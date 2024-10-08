@@ -5,6 +5,8 @@ This repository contains materials and instructions for participants of the Biod
 Here we outline the various tools, demos, and resources that can be used to access and use the biological and biogeographical data in OBIS.
 
 - [Data access](#access-obis-data)
+- [Demos](#demos)
+- [Other resources](#other-resources)
 
 
 ## Access OBIS data
