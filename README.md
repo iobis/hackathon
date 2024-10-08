@@ -62,6 +62,12 @@ seamount_datasets <- datasets[grepl(paste(search_terms, collapse = "|"), dataset
 
 [links to jupyter notebook for full data export?]
 
+A full data export of OBIS data is available for download as a Parquet file, [here](https://obis.org/data/access/). Note the following:
+
+* These exports do not include measurement data, dropped records, or absence records
+* The exported file will be a single, flattened Occurrence table
+* The table includes all provided Event and Occurrence data, as well as 68 fields added by the OBIS Quality Control Pipeline, including taxonomic information obtained from WoRMS
+
 ## OBIS homepage
 
 From the OBIS homepage, you can search for data in the search bar in the middle of the page. You can search by particular taxonomic groups, common names, dataset names, OBIS nodes, institute name, areas (e.g., Exclusive Economic Zone (EEZ)), or by the data provider’s country.
