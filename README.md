@@ -64,9 +64,9 @@ seamount_datasets <- datasets[grepl(paste(search_terms, collapse = "|"), dataset
 
 A full data export of OBIS data is available for download as a Parquet file, [here](https://obis.org/data/access/). Note the following:
 
-* These exports do not include measurement data, dropped records, or absence records
-* The exported file will be a single, flattened Occurrence table
-* The table includes all provided Event and Occurrence data, as well as 68 fields added by the OBIS Quality Control Pipeline, including taxonomic information obtained from WoRMS
+- These exports do not include measurement data, dropped records, or absence records
+- The exported file will be a single, flattened Occurrence table
+- The table includes all provided Event and Occurrence data, as well as 68 fields added by the OBIS Quality Control Pipeline, including taxonomic information obtained from WoRMS
 
 ## OBIS homepage
 
@@ -76,3 +76,17 @@ See [here](https://manual.obis.org/access.html#obis-homepage-and-dataset-pages) 
 ## OBIS Mapper
 
 The [OBIS Mapper](https://mapper.obis.org) lets you visualize and filter OBIS data by taxonomy, location, time, and data quality, with options to combine layers and download them as CSV. For more details, see the [OBIS manual](https://manual.obis.org/access.html#mapper).
+
+## Demos
+
+
+## Other Resources
+
+Here is a list of other OBIS-relevant resources:
+
+- [Darwin Core term Quick Reference Guide](https://dwc.tdwg.org/terms/): provides definitions of the DwC terms in datasets obtained from OBIS
+- [OBIS MapTool](https://obis.org/maptool/#): used for generating WKT strings, georeferencing, etc.
+  - How to use the OBIS MapTool [YouTube tutorial](https://www.youtube.com/watch?v=XM23WEvE364&list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF&index=14)
+- [Wellknown Text (WKT) visualization tool](https://wktmap.com/): tool to visualize WKT strings
+- YouTube video tutorial on accessing data with [OBIS Mapper](https://youtu.be/9PSPEtqgjUI?si=mMzqAWUbwWDIdjss)
+- YouTube video tutorial on accessing data with [robis](https://youtu.be/8Ep4fGICQWU?si=8GXfZKb871r4wHzx)
