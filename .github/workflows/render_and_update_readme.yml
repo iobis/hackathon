@@ -35,7 +35,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install nbconvert selenium webdriver-manager quarto-cli
+          pip install nbconvert selenium webdriver-manager quarto-cli duckdb pyarrow seaborn lonboard geopandas
 
       # Render the added/changed files
       - name: Render and take screenshots
