@@ -54,7 +54,7 @@ def capture_screenshot(html_content, output_path):
     
     driver.get(f"file://{os.path.abspath('temp.html')}")
     time.sleep(2)  # Allow time for rendering
-    driver.set_window_size(1200, 1000)
+    driver.set_window_size(1200, 800)
     driver.save_screenshot(output_path)
     driver.quit()
     os.remove("temp.html")
