@@ -9,7 +9,6 @@ Here we outline the various tools, demos, and resources that can be used to acce
 - [Demo Notebooks](#notebook-demos)
 - [Other resources](#other-resources)
 
-
 ## Access OBIS data
 
 There are several options available to download data from OBIS, some of which include:
@@ -19,7 +18,7 @@ There are several options available to download data from OBIS, some of which in
 - [Full data exports](#full-data-exports)
 - [OBIS homepage search](https://obis.org/) or [advanced dataset search](https://obis.org/datasets)
 - [OBIS Mapper](https://mapper.obis.org/)
-
+- [speciesgrids](#speciesgrids)
 
 ### robis
 
@@ -65,7 +64,7 @@ seamount_datasets <- datasets[
   grepl(paste(search_terms, collapse = "|"), datasets$abstract, ignore.case = TRUE),]
 ```
 
-## Full data exports
+### Full data exports
 
 [links to jupyter notebook for full data export?]
 
@@ -75,14 +74,18 @@ A full data export of OBIS data is available for download as a Parquet file, [he
 - The exported file will be a single, flattened Occurrence table
 - The table includes all provided Event and Occurrence data, as well as 68 fields added by the OBIS Quality Control Pipeline, including taxonomic information obtained from WoRMS
 
-## OBIS homepage
+### OBIS homepage
 
 From the OBIS homepage, you can search for data in the search bar in the middle of the page. You can search by particular taxonomic groups, common names, dataset names, OBIS nodes, institute name, areas (e.g., Exclusive Economic Zone (EEZ)), or by the data provider’s country.
 See [here](https://manual.obis.org/access.html#obis-homepage-and-dataset-pages) for more details.
 
-## OBIS Mapper
+### OBIS Mapper
 
 The [OBIS Mapper](https://mapper.obis.org) lets you visualize and filter OBIS data by taxonomy, location, time, and data quality, with options to combine layers and download them as CSV. For more details, see the [OBIS manual](https://manual.obis.org/access.html#mapper).
+
+### speciesgrids
+
+[speciesgrids](https://github.com/iobis/speciesgrids) is a Python package to build WoRMS aligned combined OBIS and GBIF species distribution datasets. The resulting dataset is available in a few resolutions on AWS S3. The dataset can be downloaded locally for best performance, or queried directly from the S3 bucket. For more details about downloading and using the dataset, see the [speciesgrids README](https://github.com/iobis/speciesgrids) or the [notebook](notebooks/Python/speciesgrids_demo.ipynb).
 
 ## Notebook demos
 
