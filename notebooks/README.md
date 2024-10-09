@@ -10,7 +10,12 @@ Here we present some notebooks covering several topics as OBIS data access, data
 
 
 
+
 # Python
+## Speciesgrids Demo
+[speciesgrids_demo.ipynb](Python/speciesgrids_demo.ipynb)
+![Speciesgrids Demo](screenshots/speciesgrids_demo.png)
+
 
 
 
