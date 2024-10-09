@@ -61,6 +61,7 @@ def capture_screenshot(html_content, output_path):
 
 # Function to update README.md
 def update_readme(section, file_name, file_path, screenshot_path):
+    print(f"Updating README...")
     readme_path = os.path.join(notebooks_dir, "README.md")
     title = file_name.split(".")[0]  # Get title from file name
     title = title.replace("_", " ").title()  # Replace underscores with spaces and capitalize
@@ -79,9 +80,11 @@ def update_readme(section, file_name, file_path, screenshot_path):
 
     if pattern.search(content):
         # If the entry exists, update it with the new screenshot path
+        print(f"Entry already exists on {readme_path}")
         content = pattern.sub(new_entry, content)
     else:
         # If no entry exists, add a new one under the correct section
+        print(f"Adding new entry to {readme_path} on section {section}...")
         if section == "Python":
             content = re.sub(r"(# Python\n)", rf"\1{new_entry}\n", content)
         elif section == "R":
