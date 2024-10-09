@@ -1,0 +1,42 @@
+name: Render Notebooks and Update README
+
+on:
+  push:
+    paths:
+      - 'notebooks/R/**'
+      - 'notebooks/Python/**'
+  pull_request:
+    paths:
+      - 'notebooks/R/**'
+      - 'notebooks/Python/**'
+
+jobs:
+  render_and_update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Install necessary dependencies
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install nbconvert selenium webdriver-manager quarto-cli
+
+      # Render the added/changed files
+      - name: Render and take screenshots
+        run: |
+          python .github/scripts/render_and_screenshot.py
+
+      # Commit changes (screenshots and updated README)
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add notebooks/screenshots README.md
+          git commit -m "Auto update README with new files and screenshots"
+          git push

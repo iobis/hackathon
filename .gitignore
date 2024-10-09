@@ -1,0 +1,14 @@
+.DS_Store
+.Rhistory
+*.Rproj
+shapes
+.Rproj.user
+*_storr
+shapes_errors
+*.sqlite
+*.sqlite-journal
+*.rds
+dev.R
+protectedseas.zip
+data/
+.venv/
