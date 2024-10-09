@@ -7,7 +7,7 @@ format:
 
 Note: this tutorial was originally published in the [**OBIS Resources website**](https://resources.obis.org/tutorials/env-data/).
 
-For many research questions we are interested in the environmental conditions where a certain species, population, or community lives. OBIS already provides some environmental data along with the records. For example, if you download records for the species _Actinia equina_, you can obtain values for sea surface temperature (SST), salinity (SSS), and bathymetry:
+For many research questions we are interested in the environmental conditions where a certain species, population, or community lives. OBIS already provides some environmental data along with the records. For example, if you download records for the species _Actinia equina_, you can easily obtain values for sea surface temperature (SST), salinity (SSS), and bathymetry:
 
 ```{r}
 library(robis)
