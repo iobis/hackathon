@@ -1,11 +1,12 @@
 # Biodiversity Hackathon: OBIS Resources
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iobis/hackathon/HEAD)
 
 This repository contains materials and instructions for participants of the Biodiversity Hackathon.
 Here we outline the various tools, demos, and resources that can be used to access and use the biological and biogeographical data in OBIS.
 
 - [Data access](#access-obis-data)
-- [Demos](#demos)
+- [Demo Notebooks](#notebook-demos)
 - [Other resources](#other-resources)
 
 
@@ -79,8 +80,11 @@ See [here](https://manual.obis.org/access.html#obis-homepage-and-dataset-pages) 
 
 The [OBIS Mapper](https://mapper.obis.org) lets you visualize and filter OBIS data by taxonomy, location, time, and data quality, with options to combine layers and download them as CSV. For more details, see the [OBIS manual](https://manual.obis.org/access.html#mapper).
 
-## Demos
+## Notebook demos
 
+We have prepared several JupyterHub Notebooks that can be used for reference, see: https://github.com/iobis/hackathon/tree/master/notebooks. The notebooks cover several topics including OBIS data access, data cleaning, environmental information extraction, and data visualization.
+
+You can also access the notebooks through the Binder link.
 
 ## Other Resources
 
