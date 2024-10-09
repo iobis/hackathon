@@ -179,7 +179,7 @@ As you can see, it extracted the environmental infromation for all points. We ca
 summary(extracted_data)
 ```
 
-Note that we have `r sum(is.na(extracted_data[,1]))` NA points, i.e. with no information. Those points are probably on land. You may chose to remove those or you can find the nearest valid point. In our case we will simply remove them.
+Note that we have some NA points, i.e. with no information. Those points are probably on land. You may chose to remove those or you can find the nearest valid point. In our case we will simply remove them.
 
 ```{r}
 actiniaria_vec_filt <- cbind(actiniaria_vec_filt, extracted_data)
