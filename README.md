@@ -1,6 +1,8 @@
 # Biodiversity Hackathon: OBIS Resources
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iobis/hackathon/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iobis/hackathon/HEAD) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/iobis/hackathon)
+
+
 
 This repository contains materials and instructions for participants of the Biodiversity Hackathon.
 Here we outline the various tools, demos, and resources that can be used to access and use the biological and biogeographical data in OBIS.
