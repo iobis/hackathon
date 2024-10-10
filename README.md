@@ -2,7 +2,7 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iobis/hackathon/HEAD) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/iobis/hackathon)
 
-
+See instructions to open notebooks on Binder/Colab [here](#binder-instructions)
 
 This repository contains materials and instructions for participants of the Biodiversity Hackathon.
 Here we outline the various tools, demos, and resources that can be used to access and use the biological and biogeographical data in OBIS.
@@ -94,6 +94,22 @@ The [OBIS Mapper](https://mapper.obis.org) lets you visualize and filter OBIS da
 We have prepared several JupyterHub Notebooks that can be used for reference, see: https://github.com/iobis/hackathon/tree/master/notebooks. The notebooks cover several topics including OBIS data access, data cleaning, environmental information extraction, and data visualization.
 
 You can also access the notebooks through the Binder link.
+
+### Instructions for Binder/Colab
+
+Binder already have the requirements installed and comes with RStudio, but is slower. For Colab, you need to install the needed packages, but is faster and have other nice features. The easiest way to install the requirements is to add a code cell in the notebook and run this:
+
+**For Python**
+
+```
+!pip install -r https://raw.githubusercontent.com/iobis/hackathon/refs/heads/master/requirements.txt
+```
+
+**For R**
+
+```
+source('https://raw.githubusercontent.com/iobis/hackathon/refs/heads/master/requirements-r-colab.txt')
+```
 
 ## Other Resources
 
