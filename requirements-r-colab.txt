@@ -1,0 +1,67 @@
+ubuntu_packages <- c("libudunits2-dev", "libgdal-dev", "libgeos-dev", "libproj-dev")
+
+cli::cli_alert_info("Installing ubuntu packages")
+
+system(paste("sudo apt install", paste(ubuntu_packages, collapse = " ")))
+
+cli::cli_alert_info("Installing R packages")
+
+# To install by system binaries put as a name
+# e.g. "sudo apt install r-cran-dplyr" = "dplyr"
+req_packages <- c(
+  "sudo apt install r-cran-terra" = "terra",
+  "sudo apt install r-cran-sf" = "sf",
+  "sudo apt install r-cran-tidyverse" = "tidyverse",
+  "sudo apt install r-cran-devtools" = "devtools",
+  "sudo apt install r-cran-robis" = "robis",
+  "sudo apt install r-cran-arrow" = "arrow",
+  "sudo apt install r-cran-sfarrow" = "sfarrow",
+  "sudo apt install r-cran-stars" = "stars"
+  #,"BiocManager"
+)
+
+#bioconductor_packages <- c("ggtree", "ggtreeExtra", "phyloseq")
+
+# Needed packages on GitHub
+git_packages <- c("obistools", "biooracler")
+git_packages_source <- c(
+  "iobis/obistools",
+  "bio-oracle/biooracler"
+)
+
+# Create a function to check if is installed
+is_package_installed <- function(pkg) {
+  requireNamespace(pkg, quietly = TRUE)
+}
+
+# Check which ones are not installed and install if needed:
+for (i in 1:length(req_packages)) {
+  if (!is_package_installed(req_packages[i])) {
+    if (names(req_packages)[i] == "") {
+        cli::cli_alert_info("Installing {cli::bg_cyan(req_packages[i])} by install.packages")
+        install.packages(req_packages[i])
+    } else {
+        cli::cli_alert_info("Installing {cli::bg_cyan(req_packages[i])} by Ubuntu binaries")
+        system(names(req_packages)[i])
+    }
+  } else {
+    cli::cli_alert_success("{cli::bg_cyan(req_packages[i])} already installed.")
+  }
+}
+
+# Check github packages
+for (i in 1:length(git_packages)) {
+  if (!is_package_installed(git_packages[i])) {
+    cli::cli_alert_info("Installing {cli::bg_cyan(git_packages_source[i])} by devtools")
+    devtools::install_github(git_packages_source[i])
+  } else {
+    cli::cli_alert_success("{cli::bg_cyan(git_packages_source[i])} already installed.")
+  }
+}
+
+# # Check bioconductor packages
+# for (i in 1:length(bioconductor_packages)) {
+#   if (!is_package_installed(bioconductor_packages[i])) {
+#     BiocManager::install(bioconductor_packages[i])
+#   }
+# }
