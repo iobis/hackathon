@@ -3,6 +3,10 @@
 Here we present some notebooks covering several topics as OBIS data access, data cleaning, environmental information extraction, and data visualization.
 
 # R
+## Remove Records On Land
+[remove_records_on_land.ipynb](R/remove_records_on_land.ipynb)
+![Remove Records On Land](screenshots/remove_records_on_land.png)
+
 ## Environmental Data For Occurrences
 [environmental_data_for_occurrences.qmd](R/environmental_data_for_occurrences.qmd)
 ![Environmental Data For Occurrences](screenshots/environmental_data_for_occurrences.png)
@@ -10,7 +14,14 @@ Here we present some notebooks covering several topics as OBIS data access, data
 
 
 
+
+
 # Python
+## Speciesgrids Demo
+[speciesgrids_demo.ipynb](Python/speciesgrids_demo.ipynb)
+![Speciesgrids Demo](screenshots/speciesgrids_demo.png)
+
+
 
 
 
