@@ -4,7 +4,7 @@ cli::cli_alert_info("Installing ubuntu packages")
 
 system(paste("sudo apt install", paste(ubuntu_packages, collapse = " ")))
 
-cli::cli_alert_info("Installing R packages")
+cli::cli_alert_info("Installing R packages on CRAN")
 
 # To install by system binaries put as a name
 # e.g. "sudo apt install r-cran-dplyr" = "dplyr"
@@ -16,7 +16,8 @@ req_packages <- c(
   "sudo apt install r-cran-robis" = "robis",
   "sudo apt install r-cran-arrow" = "arrow",
   "sudo apt install r-cran-sfarrow" = "sfarrow",
-  "sudo apt install r-cran-stars" = "stars"
+  "sudo apt install r-cran-stars" = "stars",
+  "sudo apt install r-cran-patchwork" = "patchwork"
   #,"BiocManager"
 )
 
@@ -48,6 +49,8 @@ for (i in 1:length(req_packages)) {
     cli::cli_alert_success("{cli::bg_cyan(req_packages[i])} already installed.")
   }
 }
+
+cli::cli_alert_info("Installing R packages on GitHub")
 
 # Check github packages
 for (i in 1:length(git_packages)) {
