@@ -68,8 +68,6 @@ seamount_datasets <- datasets[
 
 ### Full data exports
 
-[links to jupyter notebook for full data export?]
-
 A full data export of OBIS data is available for download as a Parquet file, [here](https://obis.org/data/access/). Note the following:
 
 - These exports do not include measurement data, dropped records, or absence records
